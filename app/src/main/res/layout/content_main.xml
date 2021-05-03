@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="100px"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    // username-->
+
+
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名"
+
+            android:lines="1"
+            android:maxLength="18"
+            app:layout_constraintTop_toBottomOf="@+id/textview_title"
+            app:layout_constraintLeft_toLeftOf="@+id/textview_title"
+            app:layout_constraintRight_toRightOf="@+id/textview_title"
+        />
+
+        <!--    password-->
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            app:layout_constraintTop_toBottomOf="@+id/editText_username"
+            app:layout_constraintLeft_toLeftOf="@+id/nav_host_fragment"
+            app:layout_constraintRight_toRightOf="@+id/nav_host_fragment" />
+
+        <EditText
+
+            android:id="@+id/editText_password_validate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="确认密码"
+            app:layout_constraintTop_toBottomOf="@+id/editText_password" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textview_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别："/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/editText_password_validate">
+
+                <RadioButton
+                    android:id="@+id/radio_gender_boy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/radio_gender_girl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="女" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:fadeScrollbars="true"
+            android:scrollIndicators="right">
+        </Spinner>
+
+
+        <LinearLayout
+            android:id="@+id/linearlayout_hobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview_hobby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="爱好："/>
+            <CheckBox
+                android:id="@+id/checkbox_swimming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="游泳"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音乐"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="读书"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:onClick="buttonSubmit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </TableLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
